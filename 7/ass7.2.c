@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 
     int recvcount = sendcounts[rank];
     double *subA = (double *)malloc(recvcount * sizeof(double));
-    MPI_Scatterv(A, sendcounts, displs, MPI_DOUBLE, subA, recvcount, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+    MPI_Scatterv(A, sendcounts, displs, MPI_DOUBLE, subA, recvcount, MPI_DOUBLE, 0, MPI_COMM_WORLD);//same as scatter but for uneven data distribution among processes
 
     int local_rows = recvcount / N;
     double *subC = (double *)malloc(local_rows * N * sizeof(double));

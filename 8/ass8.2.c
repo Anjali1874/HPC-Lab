@@ -60,6 +60,7 @@ int main(int argc, char* argv[]) {
     free(subA);
     free(subB);
     if (rank == 0) {
+
         free(A);
         free(B);
     }
